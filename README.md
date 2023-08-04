@@ -2,7 +2,7 @@
 
 This repo contains sample code for the Microsoft C++ compiler, Visual Studio, Visual Studio Code, and other related tools.
 
-/workspaces/cpp-samples/samples/modules-ball-bit/src## Sample Index
+## Sample Index
 
 * C++ Language Features
   * [C++ Modules - Ball Pit](./samples/modules-ball-pit)
