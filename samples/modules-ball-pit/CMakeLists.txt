@@ -17,15 +17,26 @@ project(
 # It is always easier to navigate in an IDE when projects are organized in folders.
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+# Grab the olcPixelGameEngine library from GitHub.
+include(FetchContent)
+FetchContent_Declare(
+    olcPixelGameEngine
+    GIT_REPOSITORY https://github.com/OneLoneCoder/olcPixelGameEngine
+    GIT_TAG 5764bbab19efd52b9dfa4144390c9f47edfe7dc3
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+)
+FetchContent_MakeAvailable(olcPixelGameEngine)
+
 include_directories(
-    3rd_party/olcPixelGameEngine
+    ${olcpixelgameengine_SOURCE_DIR}
     include
 )
 
 message("CMAKE_CXX_SOURCE_FILE_EXTENSIONS ${CMAKE_CXX_SOURCE_FILE_EXTENSIONS}")
 
 add_executable(ball_pit
-    3rd_party/olcPixelGameEngine/olcPixelGameEngine.h
+    ${olcpixelgameengine_SOURCE_DIR}/olcPixelGameEngine.h
     src/3rd_party/olcPixelGameEngine.cpp
     src/ball-pit.cpp
     src/physics/physics-ball.cpp
